@@ -23,6 +23,11 @@ public class UserService {
         Role role = new Role();
         role.setId(1L);
         user.getRoles().add(role);
+        if(user.getUsername().equals("admin")){
+            Role admin_role = new Role();
+            admin_role.setId(2L);
+            user.getRoles().add(admin_role);
+        }
         return userRepository.save(user);
     }
 }
